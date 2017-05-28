@@ -1,0 +1,127 @@
+<html data-ng-app="myApp" xmlns="http://www.w3.org/1999/html">
+<script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-route.min.js"></script>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+    <script src="app.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        .user-row {
+            margin-bottom: 14px;
+        }
+
+        .user-row:last-child {
+            margin-bottom: 0;
+        }
+
+        .dropdown-user {
+            margin: 13px 0;
+            padding: 5px;
+            height: 100%;
+        }
+
+        .dropdown-user:hover {
+            cursor: pointer;
+        }
+
+        .table-user-information > tbody > tr {
+            border-top: 1px solid #c6ffb3;
+        }
+
+        .table-user-information > tbody > tr:first-child {
+            border-top: 0;
+        }
+        .table-user-information > tbody > tr > td {
+            border-top: 0;
+        }
+        .toppad
+        {margin-top:20px;
+        }
+
+        .panel-heading{
+            back-ground-color: #c6ffb3;
+        }
+
+
+
+    </style>
+
+</head>
+<body data-ng-controller="ViewProfileController">
+<div class="col-md-4 col-md-offset-1">
+    <h1>View Profile</h1>
+
+    <form>
+        Enter Employee Name : <input type="text" data-ng-model="name" data-ng-change="separate(name)"/>
+        <br><br>
+        <button type="button"  data-ng-click="get_details()"  class="w3-btn w3-green w3-ripple">View Details </button>
+    </form>
+    <br>
+    <div data-ng-show="show">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-3 col-sm-offset-3 col-md-offset-0 col-lg-offset-0 toppad" >
+
+
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">{{emp_det.firstName+" "+emp_det.lastName}}</h3>
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-md-3 col-lg-3 " align="left"> <img alt="User Pic" src="index.PNG" class="img-circle img-responsive"> </div>
+                                <div class=" col-md-9 col-lg-9 ">
+                                    <table class="table table-user-information">
+                                        <tbody>
+
+                                        <tr>
+                                            <td>Company:</td>
+                                            <td>{{emp_det.company}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Designation:</td>
+                                            <td>{{emp_det.designation}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Supervisor:</td>
+                                            <td>{{emp_det.supervisor}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>E-mail:</td>
+                                            <td>{{emp_det.email}}</td>
+                                        </tr>
+
+                                        <tr>
+                                        <tr>
+                                            <td>Tel. No.:</td>
+                                            <td>{{emp_det.phone}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Employee ID:</td>
+                                            <td>{{emp_det.employee_ID}}l</td>
+                                        </tr>
+
+
+                                        </tbody>
+                                    </table>
+
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+</html> 

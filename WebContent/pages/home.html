@@ -1,0 +1,119 @@
+<!doctype html>
+<html data-ng-app="myApp"  >
+<head>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+	<script src="app.js"></script>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	
+	
+	<style>
+ ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+ li a:hover:not(.active) {
+    background-color: #4CAF50;
+} 
+
+/* .navbar #nav > .active > a {
+    color: red;
+    background-color: #4CAF50; 
+    
+} */
+
+ .active{
+	background-color: #4CAF50;
+
+}
+a:hover,a:active{color:#4CAF50;} 
+
+
+</style>
+
+<script>
+
+/* $(function() {
+    $('#nav  a').click(function() {
+       $('#nav ').removeClass();
+       $($(this).attr('href')).addClass('active');
+    });
+ }); */
+     
+     
+
+</script>
+
+</head>
+
+<body >
+
+
+
+	<div class="navbar">
+	
+	
+        	
+			    <ul class="nav" id="nav">
+				    <li id="h" class="navbar-link"><a  href="#/">Home</a></li>
+				    <li id="m"><a href="#/mark">Mark My Attendance</a></li>
+				    <li id="p"><a data-ng-disabled="myCol='false'"  href="#/profile">Create Employee Profile</a></li>
+				    <li id="v"><a href="#/view_profile">View Employee Profile</a></li>
+				    <li id="a"><a href="#/view_attendance">View Employee Attendance</a></li>
+				    <li id="l" class="nav navbar-right" ><a href="http://localhost/attendance/WebContent/login.html" target="_self"><span data-ng-align="right">Logout</span></a></li>
+			    </ul>
+			 
+    </div>
+
+    <div data-ng-view></div>
+ 
+	
+ 
+ <script>
+ 
+/*  var app = angular.module('myApp', []);
+ app.controller('first_page', function($scope) {
+	 
+ $scope.hey="fun";
+ 
+ $scope.disableLink();
+
+ $scope.disableLink=function disableLink()
+	        {
+	        document.getElementById('p').disabled=true;
+	        document.getElementById('p').removeAttribute('href');    
+	        document.getElementById('p').style.textDecoration = 'none';
+	        document.getElementById('p').style.cursor = 'default';
+	        };
+ 
+ 
+ 
+ };
+}); */
+ 
+
+ </script>
+
+ </body> 
+
+</html>   
+   

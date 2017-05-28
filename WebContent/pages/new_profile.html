@@ -1,0 +1,114 @@
+<html>
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.min.js"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-route.min.js"></script> 
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <style>
+    label { width: 200px; float: left; margin: 0 20px 0 0; }
+    
+  .thumb {
+    width: 24px;
+    height: 24px;
+    float: none;
+    position: relative;
+    top: 7px;
+}
+    
+    
+    </style>
+
+</head>
+
+<body>
+
+
+<div class="col-md-4 col-md-offset-1">
+    <h1>Create New Profile :</h1>
+    <br>
+    <form name="form" data-ng-submit="new_user(firstName,lastName,designation,email,phone,supervisor,company,employee_ID)" role="form" novalidate>
+        <div class="form-group" data-ng-class="{ 'has-error': form.firstName.$dirty && form.firstName.$error.required }">
+            <label for="firstName"> First Name :</label>
+            <input type="text" name="firstName" id="firstName" class="w3-input w3-border" placeholder="First Name" data-ng-model="firstName" required >
+            <span data-ng-show="form.firstName.$dirty && form.firstName.$error.required" class="help-block">First name is required</span>
+        
+       
+        </div>
+        <div class="form-group" data-ng-class="{ 'has-error': form.lastName.$dirty && form.lastName.$error.required }">
+            <label for="lastName">Last Name :</label>
+            <input type="text" name="lastName" id="Text1" class="w3-input w3-border" placeholder="Last Name" data-ng-model="lastName" required />
+            <span data-ng-show="form.lastName.$dirty && form.lastName.$error.required" class="help-block">Last name is required</span>
+        
+        
+        </div>
+        <div class="form-group" data-ng-class="{ 'has-error': form.Designation.$dirty && form.Designation.$error.required }">
+            <label for="Designation">Designation :</label>
+            <input type="text" name="Designation" id="Text1" class="w3-input w3-border" placeholder="Designation" data-ng-model="designation" required />
+            <span data-ng-show="form.Designation.$dirty && form.Designation.$error.required" class="help-block">Designation is required</span>
+        </div>
+        <div class="form-group" data-ng-class="{ 'has-error': form.email.$dirty && form.email.$error.required || form.email.$dirty && form.email.$error.email}">
+            <label for="email">E-mail :</label>
+            <input type="email" name="email" id="Text1" class="w3-input w3-border" placeholder="E-mail"  data-ng-model="email" required />
+            <span data-ng-show="form.email.$dirty && form.email.$error.required " class="help-block">E-mail is required</span>
+            <span data-ng-show=" form.email.$dirty && form.email.$error.email " class="help-block">Invalid E-mail address</span>
+        </div>
+        <div class="form-group" data-ng-class="{ 'has-error': form.phone.$dirty && form.phone.$error.required || form.phone.$dirty && form.phone.$error.minlength || form.phone.$dirty && form.phone.$error.maxlength}">
+            <label for="phone">Phone Number :</label>
+            <input type="text" name="phone" id="Text1" class="w3-input w3-border" placeholder="Phone Number" data-ng-minlength="10" data-ng-maxlength="10" data-ng-model="phone" required />
+            <span data-ng-show="form.phone.$dirty && form.phone.$error.required " class="help-block">Phone number is required</span>
+            <span data-ng-show="form.phone.$dirty && form.phone.$error.minlength || form.phone.$dirty && form.phone.$error.maxlength " class="help-block">Phone Number should have 10 digits </span>
+        </div>
+        
+        <div class="form-group" data-ng-class="{ 'has-error': form.Supervisor.$dirty && form.Supervisor.$error.required }">
+            <label for="Supervisor">Supervisor :</label>
+            <input type="text" name="Supervisor" id="Text1" class="w3-input w3-border" placeholder="Supervisor" data-ng-model="supervisor" required />
+            <span data-ng-show="form.Supervisor.$dirty && form.Supervisor.$error.required" class="help-block">Supervisor is required</span>
+        </div>
+        <div class="form-group" data-ng-class="{ 'has-error': form.Company.$dirty && form.Company.$error.required }">
+            <label for="Company">Company :</label>
+            <input type="text" name="Company" id="Text1" class="w3-input w3-border" placeholder="Company" data-ng-model="company" required />
+            <span data-ng-show="form.Company.$dirty && form.Company.$error.required" class="help-block">Company is required</span>
+        </div>
+        
+        
+        
+        <div class="form-group" data-ng-class="{ 'has-error': form.employee_ID.$dirty && form.employee_ID.$error.required }">
+            <label for="employee_ID">Employee ID :</label>
+            <input type="text" name="employee_ID" id="employee_ID" class="w3-input w3-border" placeholder="Employee ID" data-ng-model="employee_ID" required />
+            <span data-ng-show="form.employee_ID.$dirty && form.employee_ID.$error.required" class="help-block">Employee ID is required</span>
+        </div>
+        
+        <div class="form-group" data-ngf-model-invalid="errorFile" data-ng-class="{ 'has-error': form.picFile.$dirty && form.picFile.$error.required || form.picFile.$dirty && form.picFile.$error.maxSize  }"
+         >
+          <label for="picfile">Profile Picture :</label>
+          
+          <input type="file" data-ngf-select-ng-model="picFile" name="file" id="picfile" class="w3-input w3-border" accept="image/*" data-ngf-max-size="4MB" required data-ngf-model-invalid="errorFile" >
+     	  <span data-ng-show="form.picFile.$dirty && form.picFile.$error.required" class="help-block">Employee Profile Picture is required</span>
+     	  <span data-ng-show="form.picFile.$dirty && form.picFile.$error.maxSize " class="help-block">File too large </span>
+     
+      	<i>
+          {{errorFile.size / 1000000|number:1}}MB: max 2M</i>
+        
+       	</div> 
+        
+        
+        
+        
+        
+        
+        
+        
+        <div class="form-actions">
+            <button type="submit" data-ng-disabled="form.$invalid || vm.dataLoading" class="w3-btn w3-green w3-ripple">&#10004;  Save</button>
+<!--             <img data-ng-if="vm.dataLoading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" /> -->
+<!--             <a href="#!/login" class="btn btn-link">Cancel</a> -->
+        </div>
+    </form>
+</div>
+
+</body>

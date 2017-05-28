@@ -1,0 +1,85 @@
+ <html>
+	<head>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.min.js"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-route.min.js"></script> 
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <style>
+		table {
+		    border-collapse: collapse;
+		    width: 100%;
+		}
+		
+		table,th, td {
+		    text-align: left;
+		    padding: 8px;
+/* 		    border: 1px solid gray; */
+			border: 1px solid #bfbfbf;
+/*     		border-color: #808080; */
+		}
+		
+		tr:nth-child(even){background-color: #f2f2f2}
+		
+		th {
+		    background-color: #4CAF50;
+		    color: white;
+		}
+</style>
+    
+    </head>
+    <body>
+    <div class="col-md-4 col-md-offset-1">
+    	<h1>View Attendance</h1>
+    	<br>
+    	<form>
+    		Enter Employee Name : <input type="text" data-ng-model="name" data-ng-change="separate(name)"/>
+        	<br>
+        	first name: {{first_name}} <br>
+	        last name: {{last_name}} <br>
+	        
+	        Select Month : <select data-ng-change = "get_month(selectedMonth)" data-ng-model="selectedMonth" data-ng-options="item for item in months" >
+
+			</select><br>
+<!-- 			Month: {{selectedMonth}} -->
+			Month: {{mymonth}}
+			
+			
+			
+			<br><br>
+			<button type="button"  data-ng-click="get_details()"  class="w3-btn w3-green w3-ripple">View Details </button>
+		
+		</form>	
+		<br><br>
+		<table data-ng-show="show">
+			<thead>
+				<tr>
+					<th>{{Date}}</th>
+					<th>{{In_Time}}</th>
+					<th>{{Out_Time}}</th>
+					<th>{{Worked_Hours}}</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr data-ng-repeat="employee in employee">
+					<td>{{employee.date}}</td>
+					<td>{{employee.in_t}}</td>
+					<td>{{employee.out_t}}</td>
+					<td>{{employee.worked_hrs}}</td>
+				</tr>
+			
+			
+			</tbody>
+			
+			
+			
+		</table>
+		
+    </div>
+    </body>
+
+</html> 

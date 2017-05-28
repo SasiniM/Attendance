@@ -1,0 +1,67 @@
+<html>
+	<head>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.min.js"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-route.min.js"></script> 
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <style>
+    body{
+		background-image: url("6.png");
+		background-repeat: no-repeat;
+   
+   	    background-attachment: fixed;
+	
+        background-size: 100% 100%;
+	    opacity: 0.7;
+	
+    
+	}
+
+ 
+    </style>
+    
+    </head>
+    <body>
+    	<div class="w3-container">
+    	<div class=" col-md-6 col-md-offset-1">
+    	<h1>Welcome back!</h1>
+    	
+    	<br>
+    	
+    	<div class="panel panel-success">
+        <div class="panel-heading">Mark In Time</div>
+        <div class="panel-body">
+        	<form>
+    		<button type="button"  data-ng-click="user_in()"  class="w3-btn w3-green w3-ripple">I'm In !! </button> 
+    		<br><br>
+    		<div>{{message_in}}</div>
+    		<div>{{in_time}}</div>
+    		</form>
+        </div>
+        </div>
+        
+        <br><br><br><br><br>
+        <div class="panel panel-success">
+        <div class="panel-heading">Mark Out Time</div>
+        <div class="panel-body">
+        	<form>
+    		<button type="button" data-ng-click="user_out()"  class="w3-btn w3-green w3-ripple">I'm Out !!</button>
+    		<br><br>
+    		<div>{{message_out}}</div>
+    		<div>{{out_time}}</div>
+    		</form>
+        </div>
+        </div>
+    	
+  
+        
+        </div>
+        </div>
+    </body>
+
+</html> 

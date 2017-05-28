@@ -251,13 +251,13 @@ app.controller('ViewProfileController', function($scope,$http) {
 		 first_name: first_name,
 		 last_name: last_name,
 		 };*/
-		$http.get("http://localhost:8080/rest/employee/Sasini/Madhumali")
+		$http.get("http://localhost:8080/rest/employee/" + $scope.first_name + "/" + $scope.last_name)
 		.then(function(response) {
 		  $scope.emp_det = response.data;
 		  });
 
 		//var emp_det =  { "firstName":"John", "lastName":"Green","designation": "Developer","email": "jg@gmail.com","phone":"0777496482","supervisor":"Mark Phelps","company": "Cyrup","employee_ID":"EX62A" };
-		$scope.emp_det=emp_det;
+		//$scope.emp_det=emp_det;
 		$scope.show=true;
 	};
 

@@ -38,7 +38,7 @@
  
 	    <h1>Login</h1><br>
 
-		<form  name="myForm" action="pages/home.html" data-ng-submit="login(user,password)"   novalidate>
+		<form  name="myForm"  data-ng-submit="login(user,password)"   novalidate>
 
 		<p><b>Username :</b><br><br>
 		<input type="text" name="user" data-ng-model="user" class="w3-input w3-border" placeholder="Username" required>
@@ -63,7 +63,7 @@
 		</div>
 		</div>
   
-	    <script >
+	    <!--<script >
 	    var myApp = angular.module('myApp', []);
 
 	    // create the controller and inject Angular's $scope
@@ -72,12 +72,13 @@
 	        // create a message to display in our view
 		  $scope.user = 'John Doe';
 		  $scope.password = 'ccc';
+		  console.log("Test");
 	    });
 	    
 
 	    
 	    </script>
-	
+	-->
 	
 	  </body>
 </html>
